@@ -2,3 +2,9 @@
 .vscode/
 node_modules/
 .env
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfvars
