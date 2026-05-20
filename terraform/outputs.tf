@@ -9,3 +9,11 @@ output "static_web_app_name" {
 output "static_web_app_default_hostname" {
   value = azurerm_static_web_app.resume_site.default_host_name
 }
+
+output "storage_account_name" {
+  value = azurerm_storage_account.resume_storage.name
+}
+
+output "visitor_counter_table_name" {
+  value = azurerm_storage_table.visitor_counter.name
+}
