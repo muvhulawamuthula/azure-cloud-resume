@@ -1,59 +1,23 @@
 const visitorCountElement = document.getElementById("visitor-count");
 
-function updateLocalVisitorCounter() {
-  let count = localStorage.getItem("portfolioVisitorCount");
+async function getVisitorCount() {
+  try {
+    const response = await fetch("/api/visitorCounter");
 
-  if (!count) {
-    count = 1;
-  } else {
-    count = Number(count) + 1;
+    if (!response.ok) {
+      throw new Error("API request failed");
+    }
+
+    const data = await response.json();
+
+    visitorCountElement.textContent = data.count;
+  } catch (error) {
+    console.error("Error fetching visitor count:", error);
+    visitorCountElement.textContent = "Unavailable";
   }
-
-  localStorage.setItem("portfolioVisitorCount", count);
-  visitorCountElement.textContent = count;
 }
 
-updateLocalVisitorCounter();
-
-const typingText = document.getElementById("typing-text");
-
-const phrases = [
-  "high-performance Java backend systems.",
-  "cloud-native APIs on Azure.",
-  "AI-powered RAG pipelines.",
-  "JVM performance engineering tools.",
-  "portfolio projects beyond CRUD."
-];
-
-let phraseIndex = 0;
-let characterIndex = 0;
-let isDeleting = false;
-
-function typeEffect() {
-  const currentPhrase = phrases[phraseIndex];
-
-  if (isDeleting) {
-    typingText.textContent = currentPhrase.substring(0, characterIndex--);
-  } else {
-    typingText.textContent = currentPhrase.substring(0, characterIndex++);
-  }
-
-  if (!isDeleting && characterIndex === currentPhrase.length + 1) {
-    isDeleting = true;
-    setTimeout(typeEffect, 1300);
-    return;
-  }
-
-  if (isDeleting && characterIndex === 0) {
-    isDeleting = false;
-    phraseIndex = (phraseIndex + 1) % phrases.length;
-  }
-
-  const speed = isDeleting ? 35 : 65;
-  setTimeout(typeEffect, speed);
-}
-
-typeEffect();
+getVisitorCount();
 
 const sections = document.querySelectorAll(".section, .project-card");
 
