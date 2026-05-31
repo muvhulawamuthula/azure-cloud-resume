@@ -17,3 +17,7 @@ output "storage_account_name" {
 output "visitor_counter_table_name" {
   value = azurerm_storage_table.visitor_counter.name
 }
+output "application_insights_connection_string" {
+  value     = azurerm_application_insights.resume_insights.connection_string
+  sensitive = true
+}
