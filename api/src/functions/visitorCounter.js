@@ -1,4 +1,6 @@
 const appInsights = require("applicationinsights");
+const { app } = require("@azure/functions");
+const { TableClient, AzureNamedKeyCredential } = require("@azure/data-tables");
 
 if (process.env.APPLICATIONINSIGHTS_CONNECTION_STRING) {
   appInsights
@@ -13,20 +15,26 @@ if (process.env.APPLICATIONINSIGHTS_CONNECTION_STRING) {
 
 const telemetryClient = appInsights.defaultClient;
 
-const { app } = require("@azure/functions");
-const { TableClient, AzureNamedKeyCredential } = require("@azure/data-tables");
+function createTableClient() {
+  const accountName = process.env.STORAGE_ACCOUNT_NAME;
+  const accountKey = process.env.STORAGE_ACCOUNT_KEY;
+  const tableName = process.env.TABLE_NAME || "VisitorCounter";
 
-const accountName = process.env.STORAGE_ACCOUNT_NAME;
-const accountKey = process.env.STORAGE_ACCOUNT_KEY;
-const tableName = process.env.TABLE_NAME || "VisitorCounter";
+  if (!accountName || !accountKey) {
+    throw new Error("Missing STORAGE_ACCOUNT_NAME or STORAGE_ACCOUNT_KEY");
+  }
 
-const credential = new AzureNamedKeyCredential(accountName, accountKey);
+  const credential = new AzureNamedKeyCredential(accountName, accountKey);
 
-const client = new TableClient(
-    `https://${accountName}.table.core.windows.net`,
+  return {
     tableName,
-    credential
-);
+    client: new TableClient(
+        `https://${accountName}.table.core.windows.net`,
+        tableName,
+        credential
+    )
+  };
+}
 
 app.http("visitorCounter", {
   methods: ["GET"],
@@ -34,10 +42,11 @@ app.http("visitorCounter", {
   handler: async (request, context) => {
     const partitionKey = "portfolio";
     const rowKey = "visitor-count";
-
     const startTime = Date.now();
 
     try {
+      const { tableName, client } = createTableClient();
+
       let entity;
 
       try {
