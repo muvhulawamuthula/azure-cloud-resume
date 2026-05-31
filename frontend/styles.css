@@ -23,10 +23,20 @@ html {
 
 body {
   font-family: Inter, Arial, sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(22, 198, 12, 0.35), transparent 35%),
-    radial-gradient(circle at top right, rgba(87, 242, 135, 0.22), transparent 30%),
-    var(--bg);
+  background-color: var(--bg);
+  background-image:
+    /* green glow accents */
+    radial-gradient(circle at top left, rgba(22, 198, 12, 0.26), transparent 40%),
+    radial-gradient(circle at top right, rgba(87, 242, 135, 0.14), transparent 34%),
+    /* cyber grid texture (fine) */
+    repeating-linear-gradient(90deg, rgba(34, 220, 60, 0.11) 0 1px, transparent 1px 38px),
+    repeating-linear-gradient(0deg, rgba(34, 220, 60, 0.11) 0 1px, transparent 1px 38px),
+    /* cyber grid texture (bold every 5th line) */
+    repeating-linear-gradient(90deg, rgba(34, 220, 60, 0.16) 0 1.5px, transparent 1.5px 190px),
+    repeating-linear-gradient(0deg, rgba(34, 220, 60, 0.16) 0 1.5px, transparent 1.5px 190px),
+    /* diagonal carbon weave sheen */
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0 2px, transparent 2px 7px);
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.6;
 }
