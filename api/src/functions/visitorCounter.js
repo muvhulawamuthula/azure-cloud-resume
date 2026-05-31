@@ -1,19 +1,5 @@
-const appInsights = require("applicationinsights");
 const { app } = require("@azure/functions");
 const { TableClient, AzureNamedKeyCredential } = require("@azure/data-tables");
-
-if (process.env.APPLICATIONINSIGHTS_CONNECTION_STRING) {
-  appInsights
-      .setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING)
-      .setAutoCollectRequests(true)
-      .setAutoCollectPerformance(true, true)
-      .setAutoCollectExceptions(true)
-      .setAutoCollectDependencies(true)
-      .setAutoCollectConsole(true)
-      .start();
-}
-
-const telemetryClient = appInsights.defaultClient;
 
 function createTableClient() {
   const accountName = process.env.STORAGE_ACCOUNT_NAME;
@@ -70,24 +56,14 @@ app.http("visitorCounter", {
 
       const durationMs = Date.now() - startTime;
 
-      if (telemetryClient) {
-        telemetryClient.trackEvent({
-          name: "VisitorCounterRequested",
-          properties: {
-            route: "/api/visitorCounter",
-            tableName
-          },
-          measurements: {
-            count: Number(entity.count),
-            durationMs
-          }
-        });
-
-        telemetryClient.trackMetric({
-          name: "PortfolioVisitorCount",
-          value: Number(entity.count)
-        });
-      }
+      // Structured log — flows to Application Insights via the Functions
+      // host's built-in integration (APPLICATIONINSIGHTS_CONNECTION_STRING).
+      context.log("VisitorCounterRequested", {
+        route: "/api/visitorCounter",
+        tableName,
+        count: Number(entity.count),
+        durationMs
+      });
 
       return {
         status: 200,
@@ -97,10 +73,6 @@ app.http("visitorCounter", {
         }
       };
     } catch (error) {
-      if (telemetryClient) {
-        telemetryClient.trackException({ exception: error });
-      }
-
       context.error("Visitor counter failed", error);
 
       return {
