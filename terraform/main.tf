@@ -25,11 +25,12 @@ resource "azurerm_static_web_app" "resume_site" {
     ignore_changes = [
       repository_url,
       repository_branch,
-      repository_token
+      repository_token,
+      app_settings
     ]
   }
-
 }
+
 resource "azurerm_storage_account" "resume_storage" {
   name                     = "muvresumevisitorstore"
   resource_group_name      = azurerm_resource_group.resume_rg.name
@@ -46,4 +47,19 @@ resource "azurerm_storage_account" "resume_storage" {
 resource "azurerm_storage_table" "visitor_counter" {
   name                 = "VisitorCounter"
   storage_account_name = azurerm_storage_account.resume_storage.name
+}
+resource "azurerm_log_analytics_workspace" "resume_logs" {
+  name                = "resume-logs-workspace"
+  location            = azurerm_resource_group.resume_rg.location
+  resource_group_name = azurerm_resource_group.resume_rg.name
+  sku                 = "PerGB2018"
+  retention_in_days   = 30
+}
+
+resource "azurerm_application_insights" "resume_insights" {
+  name                = "resume-app-insights"
+  location            = azurerm_resource_group.resume_rg.location
+  resource_group_name = azurerm_resource_group.resume_rg.name
+  workspace_id        = azurerm_log_analytics_workspace.resume_logs.id
+  application_type    = "web"
 }
