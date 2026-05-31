@@ -1,17 +1,23 @@
 {
-  "name": "",
+  "name": "azure-cloud-resume-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Azure Functions API for portfolio visitor counter",
   "main": "src/functions/*.js",
   "scripts": {
     "start": "func start",
     "test": "echo \"No tests yet...\""
   },
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@azure/data-tables": "^13.3.2",
-    "@azure/functions": "^4.0.0"
+    "@azure/functions": "^4.0.0",
+    "applicationinsights": "^3.5.0"
   },
   "devDependencies": {
     "azure-functions-core-tools": "^4.x"
   }
 }
+  
+
