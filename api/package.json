@@ -12,8 +12,7 @@
   },
   "dependencies": {
     "@azure/data-tables": "^13.3.2",
-    "@azure/functions": "^4.0.0",
-    "applicationinsights": "^3.5.0"
+    "@azure/functions": "^4.0.0"
   },
   "devDependencies": {
     "azure-functions-core-tools": "^4.x"
