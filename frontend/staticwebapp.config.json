@@ -1,5 +1,21 @@
 {
   "platform": {
     "apiRuntime": "node:20"
+  },
+  "routes": [
+    {
+      "route": "/*",
+      "allowedRoles": ["anonymous"]
+    }
+  ],
+  "globalHeaders": {
+    "X-Frame-Options": "DENY",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin"
+  },
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html"
+    }
   }
 }
