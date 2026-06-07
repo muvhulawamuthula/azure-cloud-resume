@@ -37,13 +37,12 @@
 
       <div class="hero-actions">
         <a href="#projects" class="btn primary">View Projects</a>
-        <a href="Muvhulawa-Muthula-CV.pdf" class="btn secondary" download>Download CV</a>
         <a href="#contact" class="btn ghost">Contact Me</a>
       </div>
 
       <div class="stats">
         <div>
-          <strong>Java 21</strong>
+          <strong>Java 8 · 17 · 21</strong>
           <span>Modern backend engineering</span>
         </div>
         <div>
@@ -51,8 +50,8 @@
           <span>Memory and performance</span>
         </div>
         <div>
-          <strong>Azure</strong>
-          <span>Cloud resume in progress</span>
+          <strong>Azure · OCI · AWS</strong>
+          <span>Multi-cloud experience</span>
         </div>
       </div>
     </div>
@@ -86,10 +85,10 @@
     <div class="about-grid">
       <p>
         I am a Solutions Development Engineer focused on Java backend engineering,
-        performance tuning, concurrency, JVM diagnostics, REST APIs, and cloud-ready
-        systems. My projects are designed to demonstrate real engineering depth:
-        scalable APIs, parallel processing, reactive pipelines, memory analysis,
-        and clean backend architecture.
+        performance tuning, concurrency, JVM diagnostics, REST APIs, and cloud-native
+        systems across Azure, OCI, and AWS. My projects are designed to demonstrate
+        real engineering depth: scalable APIs, parallel processing, reactive pipelines,
+        memory analysis, and clean backend architecture.
       </p>
 
       <div class="counter-card">
@@ -124,6 +123,111 @@
           <span>Matching Engine</span>
         </div>
         <a class="project-link" href="https://github.com/muvhulawamuthula/matching-engine.git" target="_blank">
+          View Repository →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span>Fintech Backend</span>
+          <h3>Bank Africa Management System</h3>
+        </div>
+        <p>
+          A full-stack banking API built with Spring Boot 3 and Java 21 — JWT auth,
+          idempotent transfers, pessimistic locking to prevent overdrafts, an immutable
+          ledger, and SWIFT MT103 message generation, backed by 146 tests.
+        </p>
+        <div class="tags">
+          <span>Java 21</span>
+          <span>Spring Boot</span>
+          <span>JWT Security</span>
+          <span>MySQL</span>
+        </div>
+        <a class="project-link" href="https://github.com/muvhulawamuthula/java-bank-management-system-.git" target="_blank">
+          View Repository →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span>Cloud Observability</span>
+          <h3>Azure JVM Observatory</h3>
+        </div>
+        <p>
+          A cloud-native platform that simulates JVM stress — CPU burns, memory leaks,
+          virtual thread overload — then self-diagnoses heap pressure and thread spikes,
+          streaming telemetry to Azure Application Insights and Monitor for alerting.
+        </p>
+        <div class="tags">
+          <span>Java 21</span>
+          <span>Spring Boot</span>
+          <span>Azure</span>
+          <span>Observability</span>
+        </div>
+        <a class="project-link" href="https://github.com/muvhulawamuthula/azure-jvm-observatory.git" target="_blank">
+          View Repository →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span>AI Engineering</span>
+          <h3>AI Java Reviewer</h3>
+        </div>
+        <p>
+          An AI-powered code review tool that scans Java for security flaws, anti-patterns,
+          and complexity — built on langchain4j and the Claude API. Runs as a GitHub Action
+          with diff-aware filtering, inline PR comments, and SARIF reports for Code Scanning.
+        </p>
+        <div class="tags">
+          <span>Java</span>
+          <span>langchain4j</span>
+          <span>Claude API</span>
+          <span>GitHub Actions</span>
+        </div>
+        <a class="project-link" href="https://github.com/muvhulawamuthula/ai-java-reviewer.git" target="_blank">
+          View Repository →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span>Cloud / DevOps</span>
+          <h3>Azure Cloud Resume</h3>
+        </div>
+        <p>
+          This very site — a serverless resume on Azure Static Web Apps with a
+          visitor counter powered by an Azure Function. Infrastructure is managed
+          with Terraform and shipped through GitHub Actions CI/CD gated on tests.
+        </p>
+        <div class="tags">
+          <span>Azure</span>
+          <span>Terraform</span>
+          <span>Azure Functions</span>
+          <span>GitHub Actions</span>
+        </div>
+        <a class="project-link" href="https://github.com/muvhulawamuthula/azure-cloud-resume.git" target="_blank">
+          View Repository →
+        </a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-top">
+          <span>Kubernetes Platform</span>
+          <h3>JavaApp Operator</h3>
+        </div>
+        <p>
+          A Kubernetes operator that automates the full lifecycle of stateful Java apps
+          from a single custom resource — provisioning StatefulSets, Services, and storage,
+          with rolling upgrades, readiness gating, and HPA-aware autoscaling.
+        </p>
+        <div class="tags">
+          <span>Java</span>
+          <span>Quarkus</span>
+          <span>Kubernetes</span>
+          <span>Operators</span>
+        </div>
+        <a class="project-link" href="https://github.com/muvhulawamuthula/javaapp-operator.git" target="_blank">
           View Repository →
         </a>
       </article>
@@ -219,6 +323,8 @@
 
     <div class="skills-grid">
       <span>Java 21</span>
+      <span>Java 17</span>
+      <span>Java 8</span>
       <span>Spring Boot</span>
       <span>Jakarta EE</span>
       <span>REST APIs</span>
@@ -227,6 +333,8 @@
       <span>Reactive Programming</span>
       <span>Docker</span>
       <span>Azure</span>
+      <span>OCI</span>
+      <span>AWS</span>
       <span>Terraform</span>
       <span>GitHub Actions</span>
       <span>MySQL</span>
