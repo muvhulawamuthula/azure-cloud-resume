@@ -1,18 +1,26 @@
-# Welcome to your CDK Java project!
+# Infrastructure (AWS CDK, Java)
 
-This is a blank project for CDK development with Java.
+This folder is the AWS CDK app for the cloud resume. For the architecture, the stacks and the
+first-time setup, see the [main README](../README.md).
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Common commands
 
-It is a [Maven](https://maven.apache.org/) based project, so you can open this project with any Maven compatible Java IDE to build and run tests.
+| Command | Purpose |
+| --- | --- |
+| `mvn test` | Run the CDK assertion tests |
+| `cdk ls` | List the stacks |
+| `cdk synth --strict` | Synthesize the CloudFormation templates, failing on warnings |
+| `cdk diff` | Compare the deployed stacks with the code |
+| `cdk deploy ResumeCertStack ResumeSiteStack` | Deploy the certificate and the site |
 
-## Useful commands
+## Configuration
 
- * `mvn package`     compile and run tests
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
+Context values, set in `cdk.json` or with `-c key=value`:
 
-Enjoy!
+| Key | Default | Meaning |
+| --- | --- | --- |
+| `domain` | *(unset)* | Root domain for CloudFront. When unset, the site is served only on `*.cloudfront.net` and no certificate stack is created. |
+| `resumeRepo` | `..` | Path to the folder that contains `frontend/` and `lambda/src/` |
+
+The stacks deploy to the account and region of the active AWS CLI profile. The certificate
+stack always goes to `us-east-1`.
