@@ -197,7 +197,6 @@ public class ResumeSiteStack extends Stack {
 
         BucketDeployment.Builder.create(this, "DeploySite")
                 .sources(List.of(Source.asset(frontendDir.toString())))
-                .exclude(List.of("staticwebapp.config.json")) // Azure-only file
                 .destinationBucket(siteBucket)
                 .distribution(distribution)
                 .distributionPaths(List.of("/*"))
