@@ -94,7 +94,7 @@
       <div class="counter-card">
         <span>Portfolio Views</span>
         <strong id="visitor-count">Loading...</strong>
-        <small>Local counter now. Azure Function counter later.</small>
+        <small>Served by AWS Lambda and DynamoDB.</small>
       </div>
     </div>
   </section>
@@ -193,18 +193,20 @@
       <article class="project-card">
         <div class="project-top">
           <span>Cloud / DevOps</span>
-          <h3>Azure Cloud Resume</h3>
+          <h3>AWS Cloud Resume</h3>
         </div>
         <p>
-          This very site — a serverless resume on Azure Static Web Apps with a
-          visitor counter powered by an Azure Function. Infrastructure is managed
-          with Terraform and shipped through GitHub Actions CI/CD gated on tests.
+          This very site — a serverless resume served from a private S3 bucket
+          through CloudFront, with a visitor counter on API Gateway, Lambda and
+          DynamoDB. All infrastructure is defined in Java with the AWS CDK.
+          Migrated from Azure Static Web Apps.
         </p>
         <div class="tags">
-          <span>Azure</span>
-          <span>Terraform</span>
-          <span>Azure Functions</span>
-          <span>GitHub Actions</span>
+          <span>AWS</span>
+          <span>AWS CDK (Java)</span>
+          <span>CloudFront</span>
+          <span>Lambda</span>
+          <span>DynamoDB</span>
         </div>
         <a class="project-link" href="https://github.com/muvhulawamuthula/azure-cloud-resume.git" target="_blank">
           View Repository →
@@ -335,6 +337,7 @@
       <span>Azure</span>
       <span>OCI</span>
       <span>AWS</span>
+      <span>AWS CDK</span>
       <span>Terraform</span>
       <span>GitHub Actions</span>
       <span>MySQL</span>
