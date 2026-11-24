@@ -74,8 +74,6 @@ public class ResumeSiteStack extends Stack {
         Path frontendDir = requireDir(cfg.resumeRepo().resolve("frontend"));
         Path lambdaDir = requireDir(cfg.resumeRepo().resolve("lambda/src"));
 
-        // ---- Visitor counter API -------------------------------------------------
-
         TableV2 table = TableV2.Builder.create(this, "VisitorCounterTable")
                 .partitionKey(Attribute.builder().name("pk").type(AttributeType.STRING).build())
                 .billing(Billing.onDemand())
@@ -118,8 +116,6 @@ public class ResumeSiteStack extends Stack {
                 .methods(List.of(HttpMethod.GET))
                 .integration(new HttpLambdaIntegration("CounterIntegration", counterFn))
                 .build());
-
-        // ---- Static site ---------------------------------------------------------
 
         Bucket siteBucket = Bucket.Builder.create(this, "SiteBucket")
                 .blockPublicAccess(BlockPublicAccess.BLOCK_ALL)
@@ -201,8 +197,6 @@ public class ResumeSiteStack extends Stack {
                 .distribution(distribution)
                 .distributionPaths(List.of("/*"))
                 .build();
-
-        // ---- Outputs -------------------------------------------------------------
 
         CfnOutput.Builder.create(this, "CloudFrontDomain")
                 .description("Point the Cloudflare CNAME records here (DNS only / grey cloud)")
