@@ -3,365 +3,502 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solutions Development Engineer | Java | Cloud | AI &amp; Performance Engineering</title>
+  <title>Muvhulawa Muthula · Java Backend, Cloud &amp; Performance Engineer</title>
+  <meta name="description" content="Muvhulawa Muthula, Solutions Development Engineer. Java 21 backends, payments systems, low-latency engines, JVM performance and serverless AWS infrastructure." />
+  <meta name="theme-color" content="#07090c" />
+  <meta property="og:title" content="Muvhulawa Muthula · Java Backend, Cloud &amp; Performance Engineer" />
+  <meta property="og:description" content="Payments systems, low-latency engines, JVM diagnostics and serverless AWS, built in Java." />
+  <meta property="og:url" content="https://muvhulawamuthula.dev" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307090c'/%3E%3Cpath d='M14 44V20l9 14 9-14v24M38 44V20l6 10 6-10v24' fill='none' stroke='%234ade80' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="bg" aria-hidden="true"><div class="bg-grid"></div><div class="bg-glow"></div></div>
 
-<header class="navbar">
-  <div class="logo">MM<span>.</span></div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
+<header class="nav" id="top">
+  <a href="#top" class="logo" aria-label="Home">mm<span class="dot">.</span>dev<span class="caret"></span></a>
+  <nav aria-label="Primary">
+    <a href="#work">Work</a>
+    <a href="#architecture">Architecture</a>
+    <a href="#stack">Stack</a>
     <a href="#contact">Contact</a>
   </nav>
+  <button class="kbd-btn" id="open-palette" type="button" aria-label="Open command palette">
+    <span>Search</span><kbd>⌘K</kbd>
+  </button>
 </header>
 
-<main>
+<main id="main">
 
+  <!-- ============================== HERO ============================== -->
   <section class="hero">
-    <div class="hero-content">
-      <p class="eyebrow">Java • Cloud • AI • Performance Engineering</p>
-
+    <div class="hero-copy">
+      <p class="pill"><span class="pulse"></span>Solutions Development Engineer · South Africa</p>
       <h1>
-        Muvhulawa Muthula
-        <span>Solutions Development Engineer</span>
+        I build backends that <em>move money</em>, <em>match orders</em> and stay up under load.
       </h1>
-
-      <p class="hero-text">
-        I build high-performance Java backend systems, cloud-native APIs, and
-        AI-powered services — combining RAG pipelines, JVM performance tuning, and
-        production-minded engineering across Java 8, 17, and 21.
+      <p class="lede">
+        I'm <strong>Muvhulawa Muthula</strong>. I work in Java 21 on ISO 20022 payment pipelines,
+        low-latency matching engines and JVM diagnostics, and I run serverless systems on AWS
+        that I define as code.
       </p>
-
-      <div class="hero-actions">
-        <a href="#projects" class="btn primary">View Projects</a>
-        <a href="#contact" class="btn ghost">Contact Me</a>
+      <div class="cta-row">
+        <a href="#work" class="btn btn-primary">Explore the work <span aria-hidden="true">→</span></a>
+        <a href="https://d3de825ujm36t1.cloudfront.net/" target="_blank" rel="noopener" class="btn btn-ghost">
+          <span class="live-dot"></span> ReelRadar, live
+        </a>
       </div>
 
-      <div class="stats">
+      <dl class="telemetry" aria-label="Live telemetry for this page">
         <div>
-          <strong>Java 8 · 17 · 21</strong>
-          <span>Modern backend engineering</span>
-        </div>
-        <div>
-          <strong>JVM</strong>
-          <span>Memory and performance</span>
+          <dt>Visitors</dt>
+          <dd data-tel="count">—</dd>
         </div>
         <div>
-          <strong>Azure · OCI · AWS</strong>
-          <span>Multi-cloud experience</span>
+          <dt>Served from edge</dt>
+          <dd data-tel="pop">—</dd>
+        </div>
+        <div>
+          <dt>API round trip</dt>
+          <dd data-tel="rtt">—</dd>
+        </div>
+      </dl>
+      <p class="tel-note">Live numbers from this page's own Lambda + DynamoDB counter, via CloudFront.</p>
+    </div>
+
+    <div class="terminal" id="terminal" role="region" aria-label="Interactive terminal">
+      <div class="term-bar">
+        <span class="tl r"></span><span class="tl y"></span><span class="tl g"></span>
+        <span class="term-title">muvhulawa@edge: ~</span>
+      </div>
+      <div class="term-body" id="term-body" aria-live="polite"></div>
+      <form class="term-input" id="term-form" autocomplete="off">
+        <label for="term-cmd" class="prompt">❯</label>
+        <input id="term-cmd" type="text" spellcheck="false" placeholder="type 'help'" aria-label="Terminal command" />
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================== MARQUEE ============================== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Java 21</span><span>Virtual Threads</span><span>Spring Boot</span><span>ISO 20022</span><span>IBM MQ</span><span>AWS Lambda</span><span>DynamoDB</span><span>CloudFront</span><span>AWS CDK</span><span>Kubernetes Operators</span><span>Quarkus</span><span>langchain4j</span><span>PostGIS</span><span>Eclipse MAT</span><span>Terraform</span>
+      <span>Java 21</span><span>Virtual Threads</span><span>Spring Boot</span><span>ISO 20022</span><span>IBM MQ</span><span>AWS Lambda</span><span>DynamoDB</span><span>CloudFront</span><span>AWS CDK</span><span>Kubernetes Operators</span><span>Quarkus</span><span>langchain4j</span><span>PostGIS</span><span>Eclipse MAT</span><span>Terraform</span>
+    </div>
+  </div>
+
+  <!-- ============================== FEATURED ============================== -->
+  <section class="section" id="work">
+    <header class="section-head">
+      <p class="kicker"><span>01</span> Shipped &amp; live</p>
+      <h2>A product in production, not just a repo.</h2>
+    </header>
+
+    <article class="feature reveal" data-title="ReelRadar">
+      <div class="feature-copy">
+        <div class="badges">
+          <span class="badge badge-live"><span class="live-dot"></span>Live in production</span>
+          <span class="badge">Serverless on AWS</span>
+        </div>
+        <h3>ReelRadar</h3>
+        <p class="feature-sub">A directory of South African fishing waters, for fishermen, by a fellow fisherman.</p>
+        <p>
+          Each spot shows its location, fish species, best time to go, live weather with a 7-day
+          forecast, prices, contacts, crocodile and hippo warnings, places to stay and nearby tackle
+          shops. Anglers log personal bests with a photo of the catch and talk in the forum.
+        </p>
+        <ul class="feature-points">
+          <li><b>Zero-dependency Java 21</b>: one jar, plain JDK, with its own HTTP routing and OpenAPI 3.1 spec.</li>
+          <li><b>Lambda + SnapStart</b> behind a function URL that only answers CloudFront (shared-secret header).</li>
+          <li><b>DynamoDB</b> for records, <b>S3</b> for photos served straight from the edge, with cache purges when a photo is removed.</li>
+          <li><b>Push-to-deploy</b> with GitHub Actions, a least-privilege OIDC role and CloudFormation change sets.</li>
+        </ul>
+        <div class="tags"><span>Java 21</span><span>AWS Lambda</span><span>SnapStart</span><span>DynamoDB</span><span>S3</span><span>CloudFront</span><span>CloudFormation</span><span>Open-Meteo</span></div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://d3de825ujm36t1.cloudfront.net/" target="_blank" rel="noopener">Open ReelRadar <span aria-hidden="true">↗</span></a>
+          <span class="private-note">Source is private. Code walkthrough on request.</span>
         </div>
       </div>
+      <a class="browser" href="https://d3de825ujm36t1.cloudfront.net/" target="_blank" rel="noopener" aria-label="Open ReelRadar live site">
+        <div class="browser-bar">
+          <span class="tl r"></span><span class="tl y"></span><span class="tl g"></span>
+          <span class="url"><span class="lock">🔒</span> d3de825ujm36t1.cloudfront.net</span>
+        </div>
+        <div class="browser-body">
+          <div class="rr-head">
+            <span class="rr-logo">ReelRadar</span>
+            <span class="rr-search">Search waters, fish, towns…</span>
+          </div>
+          <div class="rr-map">
+            <svg viewBox="0 0 400 220" aria-hidden="true">
+              <defs>
+                <radialGradient id="ping" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#4ade80" stop-opacity=".9" />
+                  <stop offset="100%" stop-color="#4ade80" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <path class="rr-land" d="M40 60 C80 20 160 18 220 30 C280 40 340 30 370 70 C390 100 370 150 330 175 C290 200 230 205 170 195 C110 185 60 170 40 130 C28 105 26 80 40 60 Z" />
+              <path class="rr-river" d="M70 150 C120 120 150 140 190 110 S260 80 320 95" />
+              <path class="rr-river" d="M150 50 C170 80 180 95 190 110" />
+              <g class="rr-pins">
+                <circle cx="190" cy="110" r="22" fill="url(#ping)" class="rr-ping" />
+                <circle cx="190" cy="110" r="5" />
+                <circle cx="120" cy="132" r="4" />
+                <circle cx="262" cy="86" r="4" />
+                <circle cx="318" cy="95" r="4" />
+                <circle cx="158" cy="62" r="4" />
+                <circle cx="230" cy="160" r="4" />
+              </g>
+            </svg>
+          </div>
+          <div class="rr-cards">
+            <div class="rr-card"><b>Vaal Dam</b><span>Carp · Yellowfish</span><i>☀ 27° · wind 9 km/h</i></div>
+            <div class="rr-card"><b>Hartbeespoort</b><span>Bass · Carp</span><i>⛅ 25° · best at dawn</i></div>
+            <div class="rr-card warn"><b>Croc &amp; hippo</b><span>Warning on 3 waters</span><i>Stay clear of the banks</i></div>
+          </div>
+        </div>
+      </a>
+    </article>
+  </section>
+
+  <!-- ============================== PROJECTS ============================== -->
+  <section class="section" id="projects">
+    <header class="section-head">
+      <p class="kicker"><span>02</span> Engineering portfolio</p>
+      <h2>Systems built for the hard parts.</h2>
+      <p class="section-lede">Payments correctness, concurrency, JVM internals, platform automation and applied AI. Filter by area:</p>
+    </header>
+
+    <div class="filters" role="toolbar" aria-label="Filter projects">
+      <button type="button" class="chip is-active" data-filter="all">All <span class="n"></span></button>
+      <button type="button" class="chip" data-filter="fintech">Fintech &amp; Payments <span class="n"></span></button>
+      <button type="button" class="chip" data-filter="perf">Performance &amp; JVM <span class="n"></span></button>
+      <button type="button" class="chip" data-filter="cloud">Cloud &amp; Platform <span class="n"></span></button>
+      <button type="button" class="chip" data-filter="ai">AI <span class="n"></span></button>
+      <button type="button" class="chip" data-filter="product">Products <span class="n"></span></button>
     </div>
 
-    <div class="hero-card">
-      <div class="terminal">
-        <div class="terminal-header">
-          <span></span><span></span><span></span>
-        </div>
-        <pre><code>class Engineer {
-  String name = "Muvhulawa Muthula";
-  String stack = "Java 8, Java 17, Java 21";
-  String focus = "Backend Performance, RAG, Cloud and AI";
+    <div class="grid" id="project-grid">
 
-  void build() {
-    designCleanAPIs();
-    optimizeJVMSystems();
-    shipCloudReadyProjects();
-  }
-}</code></pre>
+      <article class="card card-wide reveal" data-cat="fintech" data-title="ISO 20022 Payment Processor">
+        <div class="card-top"><span class="cat">Fintech · Payments</span><span class="idx"></span></div>
+        <h3>ISO 20022 Payment Processor</h3>
+        <p>Takes <code>pacs.008</code> credit-transfer batches and always answers with a <code>pacs.002</code>. It runs XSD validation and JAXB parsing, settles each transaction on a double-entry ledger, and is idempotent, so one batch can come back fully accepted, partially accepted or rejected.</p>
+        <div class="tags"><span>Java 21</span><span>Spring Boot</span><span>PostgreSQL</span><span>JAXB</span><span>Kong</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/iso20022-processor" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card reveal" data-cat="fintech" data-title="IBM MQ Integration Gateway">
+        <div class="card-top"><span class="cat">Fintech · Messaging</span><span class="idx"></span></div>
+        <h3>IBM MQ Integration Gateway</h3>
+        <p>Takes ISO 20022 messages off IBM MQ, forwards them to the payment processor over HTTP, and publishes the <code>pacs.002</code> reply. It is built around what happens when things fail: transacted consumption, bounded redelivery, poison-message handling and a dead-letter queue.</p>
+        <div class="tags"><span>Java 21</span><span>IBM MQ</span><span>JMS</span><span>Spring Boot</span><span>DLQ</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/mq-integration-gateway" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card reveal" data-cat="perf fintech" data-title="Order Matching Engine">
+        <div class="card-top"><span class="cat">Low latency · Trading</span><span class="idx"></span></div>
+        <h3>Order Matching Engine</h3>
+        <p>Orders come in through an MPSC ring buffer and a single thread matches them deterministically. Price-time priority covers limit, market and cancel orders, with performance-minded data structures throughout.</p>
+        <div class="tags"><span>Java</span><span>Ring Buffer</span><span>Concurrency</span><span>Low Latency</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/matching-engine" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card reveal" data-cat="fintech" data-title="Bank Management System">
+        <div class="card-top"><span class="cat">Fintech · Banking</span><span class="idx"></span></div>
+        <h3>Bank Management System</h3>
+        <p>A full-stack banking app on a stateless JWT REST API: deposits, idempotent transfers, pessimistic locking so accounts can't overdraw, an immutable ledger, and SWIFT MT103 generation. Flyway migrations, an OpenAPI spec and <b>146 passing tests</b>.</p>
+        <div class="tags"><span>Java 21</span><span>Spring Boot 3</span><span>JWT</span><span>Flyway</span><span>OpenAPI</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/java-bank-management-system-" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card card-wide reveal" data-cat="ai cloud" data-title="AI Java Reviewer">
+        <div class="card-top"><span class="cat">AI · Developer tooling</span><span class="idx"></span></div>
+        <h3>AI Java Reviewer</h3>
+        <p>An AI code reviewer that runs as a GitHub Action. It only looks at the diff, scores each finding by confidence, and reports through inline PR comments and SARIF output for GitHub code scanning. Built on langchain4j and the Claude API.</p>
+        <div class="tags"><span>Java</span><span>langchain4j</span><span>Claude API</span><span>GitHub Actions</span><span>SARIF</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/ai-java-reviewer" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card reveal" data-cat="cloud" data-title="JavaApp Kubernetes Operator">
+        <div class="card-top"><span class="cat">Platform · Kubernetes</span><span class="idx"></span></div>
+        <h3>JavaApp Operator</h3>
+        <p>A Kubernetes operator that runs stateful Java backends from a single custom resource: StatefulSets, Services and storage, rolling upgrades, readiness gating and HPA-aware autoscaling. Packaged to be OperatorHub-ready.</p>
+        <div class="tags"><span>Java</span><span>JOSDK</span><span>Quarkus</span><span>Kubernetes</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/javaapp-operator" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card reveal" data-cat="perf cloud" data-title="Azure JVM Observatory">
+        <div class="card-top"><span class="cat">Observability · Azure</span><span class="idx"></span></div>
+        <h3>Azure JVM Observatory</h3>
+        <p>A JVM that diagnoses itself. It creates stress on purpose (CPU burns, memory leaks, virtual-thread overload), spots the heap pressure and thread spikes, and streams telemetry to Application Insights and Azure Monitor for alerting.</p>
+        <div class="tags"><span>Java 21</span><span>Spring Boot</span><span>Docker</span><span>Azure Monitor</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/azure-jvm-observatory" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card reveal" data-cat="perf" data-title="Memory Leak Detector">
+        <div class="card-top"><span class="cat">JVM · Diagnostics</span><span class="idx"></span></div>
+        <h3>Memory Leak Detector</h3>
+        <p>Five classic JVM memory leaks, each reproduced, found with Eclipse MAT heap-dump analysis, and fixed. It works as a field guide to how leaks look in a heap dump.</p>
+        <div class="tags"><span>Java 21</span><span>JVM</span><span>Eclipse MAT</span><span>Heap Analysis</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/memory-leak-detector" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card reveal" data-cat="perf" data-title="Parallel Word Counter">
+        <div class="card-top"><span class="cat">Concurrency · Benchmarks</span><span class="idx"></span></div>
+        <h3>Parallel Word Counter</h3>
+        <p>One problem solved three ways (Fork/Join, CompletableFuture and parallel Streams) and benchmarked side by side on Java 21, to show where each model wins and where it costs you.</p>
+        <div class="tags"><span>Java 21</span><span>Fork/Join</span><span>CompletableFuture</span><span>Benchmarking</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/word-counter" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card reveal" data-cat="perf" data-title="Stream Order Pipeline">
+        <div class="card-top"><span class="cat">Core Java · Functional</span><span class="idx"></span></div>
+        <h3>E-commerce Stream Pipeline</h3>
+        <p>An order pipeline written with Java Streams: <code>flatMap</code>, <code>Collectors.teeing</code>, multi-level <code>groupingBy</code>, and a custom <code>Collector&lt;T,A,R&gt;</code> written from scratch.</p>
+        <div class="tags"><span>Java</span><span>Streams</span><span>Collectors</span><span>Functional</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/reactive-pipeline" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card reveal" data-cat="cloud" data-title="Cloud Resume on AWS">
+        <div class="card-top"><span class="cat">Cloud · IaC</span><span class="idx"></span></div>
+        <h3>This site: Cloud Resume on AWS</h3>
+        <p>A private S3 bucket behind CloudFront with OAC, and a visitor counter on API Gateway, Lambda and an atomic DynamoDB <code>ADD</code>. All of it is defined in Java CDK and deployed through GitHub OIDC. Migrated from Azure.</p>
+        <div class="tags"><span>AWS CDK (Java)</span><span>CloudFront</span><span>Lambda</span><span>DynamoDB</span><span>OIDC</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/azure-cloud-resume" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card reveal" data-cat="product ai" data-title="SA FishFind API">
+        <div class="card-top"><span class="cat">Product · Geo API</span><span class="idx"></span></div>
+        <h3>SA FishFind API</h3>
+        <p>The backend for a Gauteng fishing guide. It covers five dams with species, bait and rig data and entry fees, offers GPS proximity search, and has a Claude-powered fishing advisor.</p>
+        <div class="tags"><span>Java</span><span>Spring Boot</span><span>Claude API</span><span>Azure</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/sa-fishfind" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card reveal" data-cat="product cloud" data-title="InstaLynx">
+        <div class="card-top"><span class="cat">Product · Logistics</span><span class="idx"></span></div>
+        <h3>InstaLynx</h3>
+        <p>A B2B logistics marketplace with intelligent dispatch. Businesses post loads, providers' drivers get ranked offers, and the first valid acceptance wins. Every step is tracked, priced, audited and reconciled.</p>
+        <div class="tags"><span>Spring Boot 4.1</span><span>PostGIS</span><span>Redis</span><span>React 19</span><span>Terraform · ECS</span></div>
+        <span class="card-link is-private">Private repository · demo on request</span>
+      </article>
+
+      <article class="card reveal" data-cat="product fintech" data-title="TrustTrade">
+        <div class="card-top"><span class="cat">Product · Escrow</span><span class="idx"></span></div>
+        <h3>TrustTrade</h3>
+        <p>Payment protection for South Africa's service economy. Customer and provider agree a price, the money is held in protection, the work is delivered with evidence, then approved or disputed. Finished jobs build a public trust score.</p>
+        <div class="tags"><span>Spring Boot 4</span><span>PostgreSQL</span><span>React 19</span><span>State Machine</span></div>
+        <span class="card-link is-private">Private repository · demo on request</span>
+      </article>
+
+      <article class="card reveal" data-cat="product" data-title="DailySpane Jakarta API">
+        <div class="card-top"><span class="cat">Product · Work in progress</span><span class="idx"></span></div>
+        <h3>DailySpane API</h3>
+        <p>A job-marketplace backend that connects South Africans to daily work, built with an API-first design on Jakarta EE 11 and Open Liberty.</p>
+        <div class="tags"><span>Jakarta EE 11</span><span>Open Liberty</span><span>JAX-RS</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/dailyspane-jakarta-api" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+      <article class="card reveal" data-cat="cloud" data-title="Cloud Vendor API">
+        <div class="card-top"><span class="cat">REST · Data</span><span class="idx"></span></div>
+        <h3>Cloud Vendor API</h3>
+        <p>A Spring Boot REST API for cloud-vendor records: full CRUD over Spring Data JPA and MySQL, with H2-backed JUnit 5 and Mockito tests.</p>
+        <div class="tags"><span>Java 17</span><span>Spring Boot</span><span>JPA</span><span>MySQL</span><span>JUnit 5</span></div>
+        <a class="card-link" href="https://github.com/muvhulawamuthula/cloudvendor" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================== ARCHITECTURE ============================== -->
+  <section class="section" id="architecture">
+    <header class="section-head">
+      <p class="kicker"><span>03</span> Under the hood</p>
+      <h2>You're inside one of my systems right now.</h2>
+      <p class="section-lede">This page is a serverless app. Below is the path your request just took, with the edge location that actually served you highlighted.</p>
+    </header>
+
+    <div class="arch reveal">
+      <svg class="arch-svg" viewBox="0 0 980 360" role="img" aria-labelledby="arch-title arch-desc">
+        <title id="arch-title">Request flow for muvhulawamuthula.dev</title>
+        <desc id="arch-desc">Browser to Cloudflare DNS to CloudFront. CloudFront serves static files from a private S3 bucket through Origin Access Control, and sends /api requests to API Gateway, then Lambda, then DynamoDB. GitHub Actions deploys with AWS CDK through OIDC.</desc>
+
+        <g class="flows">
+          <path id="f1" d="M150 120 H230" />
+          <path id="f2" d="M370 120 H450" />
+          <path id="f3" d="M590 100 C640 100 640 60 690 60" />
+          <path id="f4" d="M590 140 C640 140 640 180 690 180" />
+          <path id="f5" d="M760 210 V250" />
+          <path id="f7" d="M830 275 H860" />
+          <path id="f8" d="M520 300 V170" class="deploy" />
+        </g>
+        <g class="packets">
+          <circle r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#f1" /></animateMotion></circle>
+          <circle r="4"><animateMotion dur="2.4s" begin=".5s" repeatCount="indefinite"><mpath href="#f2" /></animateMotion></circle>
+          <circle r="4"><animateMotion dur="2.4s" begin="1s" repeatCount="indefinite"><mpath href="#f3" /></animateMotion></circle>
+          <circle r="4" class="api"><animateMotion dur="2.4s" begin="1.3s" repeatCount="indefinite"><mpath href="#f4" /></animateMotion></circle>
+          <circle r="4" class="api"><animateMotion dur="1.6s" begin="1.6s" repeatCount="indefinite"><mpath href="#f5" /></animateMotion></circle>
+          <circle r="4" class="api"><animateMotion dur="1.2s" begin="1.9s" repeatCount="indefinite"><mpath href="#f7" /></animateMotion></circle>
+          <circle r="4" class="dep"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#f8" /></animateMotion></circle>
+        </g>
+
+        <g class="node">
+          <rect x="20" y="85" width="130" height="70" rx="12" />
+          <text x="85" y="115" class="n-title">Your browser</text>
+          <text x="85" y="135" class="n-sub">HTTPS · HSTS</text>
+        </g>
+        <g class="node">
+          <rect x="230" y="85" width="140" height="70" rx="12" />
+          <text x="300" y="115" class="n-title">Cloudflare DNS</text>
+          <text x="300" y="135" class="n-sub">CNAME · DNS only</text>
+        </g>
+        <g class="node hot">
+          <rect x="450" y="70" width="140" height="100" rx="12" />
+          <text x="520" y="102" class="n-title">CloudFront</text>
+          <text x="520" y="122" class="n-sub">ACM TLS · headers</text>
+          <text x="520" y="150" class="n-pop" id="arch-pop">edge: …</text>
+        </g>
+        <g class="node">
+          <rect x="690" y="25" width="150" height="70" rx="12" />
+          <text x="765" y="55" class="n-title">S3 (private)</text>
+          <text x="765" y="75" class="n-sub">Origin Access Control</text>
+        </g>
+        <g class="node">
+          <rect x="690" y="145" width="150" height="65" rx="12" />
+          <text x="765" y="173" class="n-title">API Gateway</text>
+          <text x="765" y="193" class="n-sub">/api/* · 10 rps throttle</text>
+        </g>
+        <g class="node">
+          <rect x="690" y="250" width="140" height="65" rx="12" />
+          <text x="760" y="278" class="n-title">Lambda</text>
+          <text x="760" y="298" class="n-sub">Node 22 · arm64</text>
+        </g>
+        <g class="node">
+          <rect x="860" y="250" width="110" height="65" rx="12" />
+          <text x="915" y="278" class="n-title">DynamoDB</text>
+          <text x="915" y="298" class="n-sub">atomic ADD</text>
+        </g>
+        <g class="node deploy-node">
+          <rect x="420" y="300" width="200" height="50" rx="12" />
+          <text x="520" y="322" class="n-title">GitHub Actions → CDK</text>
+          <text x="520" y="340" class="n-sub">OIDC role · no static keys</text>
+        </g>
+      </svg>
+
+      <ul class="arch-notes">
+        <li><b>Edge first.</b> CloudFront terminates TLS, redirects <code>www</code> to the root domain with a CloudFront Function, and adds HSTS and frame, content-type and referrer headers.</li>
+        <li><b>No public bucket.</b> Only the distribution can read S3, through Origin Access Control.</li>
+        <li><b>Concurrency-safe counter.</b> One atomic DynamoDB <code>ADD</code> per visit, so visits that arrive at the same time are all counted.</li>
+        <li><b>Same origin.</b> The API sits under <code>/api/*</code> on the same domain, so no CORS is needed.</li>
+        <li><b>Keyless CI/CD.</b> GitHub Actions assumes an IAM role through OIDC, and CDK in Java 21 deploys it.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================== PRINCIPLES ============================== -->
+  <section class="section" id="principles">
+    <header class="section-head">
+      <p class="kicker"><span>04</span> How I engineer</p>
+      <h2>Rules I build by.</h2>
+    </header>
+    <div class="principles">
+      <div class="principle reveal">
+        <span class="p-num">// 01</span>
+        <h3>Design the failure path first</h3>
+        <p>Redelivery limits, poison messages and dead-letter queues get designed before the happy path. That boundary is where systems break.</p>
+      </div>
+      <div class="principle reveal">
+        <span class="p-num">// 02</span>
+        <h3>Correctness where money moves</h3>
+        <p>Idempotency keys, atomic settlement, double-entry ledgers and pessimistic locks. Being fast doesn't help if the money is wrong.</p>
+      </div>
+      <div class="principle reveal">
+        <span class="p-num">// 03</span>
+        <h3>Measure, don't guess</h3>
+        <p>Benchmark the alternatives, read the heap dump, profile the threads. Performance claims need evidence behind them.</p>
+      </div>
+      <div class="principle reveal">
+        <span class="p-num">// 04</span>
+        <h3>Infrastructure is code</h3>
+        <p>Every resource is in CDK, CloudFormation or Terraform and is deployed by CI with short-lived credentials. Nothing is set up by hand in a console.</p>
       </div>
     </div>
   </section>
 
-  <section id="about" class="section">
-    <div class="section-title">
-      <p>About Me</p>
-      <h2>Backend engineer building serious systems.</h2>
-    </div>
-
-    <div class="about-grid">
-      <p>
-        I am a Solutions Development Engineer focused on Java backend engineering,
-        performance tuning, concurrency, JVM diagnostics, REST APIs, and cloud-native
-        systems across Azure, OCI, and AWS. My projects are designed to demonstrate
-        real engineering depth: scalable APIs, parallel processing, reactive pipelines,
-        memory analysis, and clean backend architecture.
-      </p>
-
-      <div class="counter-card">
-        <span>Portfolio Views</span>
-        <strong id="visitor-count">Loading...</strong>
-        <small>Served by AWS Lambda and DynamoDB.</small>
+  <!-- ============================== STACK ============================== -->
+  <section class="section" id="stack">
+    <header class="section-head">
+      <p class="kicker"><span>05</span> Toolchain</p>
+      <h2>The stack, grouped by what it's for.</h2>
+    </header>
+    <div class="stack">
+      <div class="stack-group reveal">
+        <h3><span>◆</span> Languages &amp; runtime</h3>
+        <ul><li>Java 21</li><li>Java 17</li><li>Java 8</li><li>Virtual Threads</li><li>Fork/Join</li><li>JVM tuning</li><li>TypeScript</li><li>Node.js</li></ul>
+      </div>
+      <div class="stack-group reveal">
+        <h3><span>◆</span> Frameworks</h3>
+        <ul><li>Spring Boot 3 / 4</li><li>Jakarta EE 11</li><li>Quarkus</li><li>JOSDK</li><li>JAX-RS</li><li>React 19</li></ul>
+      </div>
+      <div class="stack-group reveal">
+        <h3><span>◆</span> Cloud &amp; infrastructure</h3>
+        <ul><li>AWS Lambda</li><li>CloudFront</li><li>DynamoDB</li><li>S3</li><li>API Gateway</li><li>ECS Fargate</li><li>Azure</li><li>OCI</li><li>AWS CDK</li><li>CloudFormation</li><li>Terraform</li><li>Kubernetes</li><li>Docker</li></ul>
+      </div>
+      <div class="stack-group reveal">
+        <h3><span>◆</span> Data &amp; messaging</h3>
+        <ul><li>PostgreSQL</li><li>PostGIS</li><li>MySQL</li><li>Redis</li><li>IBM MQ / JMS</li><li>Flyway</li><li>Oracle Vector Search</li></ul>
+      </div>
+      <div class="stack-group reveal">
+        <h3><span>◆</span> Payments &amp; protocols</h3>
+        <ul><li>ISO 20022</li><li>pacs.008 / pacs.002</li><li>SWIFT MT103</li><li>JWT</li><li>OpenAPI 3.1</li><li>SARIF</li></ul>
+      </div>
+      <div class="stack-group reveal">
+        <h3><span>◆</span> AI, quality &amp; ops</h3>
+        <ul><li>Claude API</li><li>langchain4j</li><li>OpenAI APIs</li><li>RAG</li><li>JUnit 5</li><li>Playwright</li><li>Eclipse MAT</li><li>GitHub Actions</li><li>CloudWatch</li><li>App Insights</li></ul>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="section">
-    <div class="section-title">
-      <p>Featured Projects</p>
-      <h2>Real Java projects beyond basic CRUD.</h2>
-    </div>
-
-    <div class="projects-grid">
-
-      <article class="project-card featured">
-        <div class="project-top">
-          <span>Low Latency</span>
-          <h3>Order Matching Engine</h3>
-        </div>
-        <p>
-          A trading-style matching engine built with Java, focused on order books,
-          price-time priority, concurrency, and performance-minded architecture.
-        </p>
-        <div class="tags">
-          <span>Java</span>
-          <span>Concurrency</span>
-          <span>Performance</span>
-          <span>Matching Engine</span>
-        </div>
-        <a class="project-link" href="https://github.com/muvhulawamuthula/matching-engine.git" target="_blank">
-          View Repository →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <div class="project-top">
-          <span>Fintech Backend</span>
-          <h3>Bank Africa Management System</h3>
-        </div>
-        <p>
-          A full-stack banking API built with Spring Boot 3 and Java 21 — JWT auth,
-          idempotent transfers, pessimistic locking to prevent overdrafts, an immutable
-          ledger, and SWIFT MT103 message generation, backed by 146 tests.
-        </p>
-        <div class="tags">
-          <span>Java 21</span>
-          <span>Spring Boot</span>
-          <span>JWT Security</span>
-          <span>MySQL</span>
-        </div>
-        <a class="project-link" href="https://github.com/muvhulawamuthula/java-bank-management-system-.git" target="_blank">
-          View Repository →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <div class="project-top">
-          <span>Cloud Observability</span>
-          <h3>Azure JVM Observatory</h3>
-        </div>
-        <p>
-          A cloud-native platform that simulates JVM stress — CPU burns, memory leaks,
-          virtual thread overload — then self-diagnoses heap pressure and thread spikes,
-          streaming telemetry to Azure Application Insights and Monitor for alerting.
-        </p>
-        <div class="tags">
-          <span>Java 21</span>
-          <span>Spring Boot</span>
-          <span>Azure</span>
-          <span>Observability</span>
-        </div>
-        <a class="project-link" href="https://github.com/muvhulawamuthula/azure-jvm-observatory.git" target="_blank">
-          View Repository →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <div class="project-top">
-          <span>AI Engineering</span>
-          <h3>AI Java Reviewer</h3>
-        </div>
-        <p>
-          An AI-powered code review tool that scans Java for security flaws, anti-patterns,
-          and complexity — built on langchain4j and the Claude API. Runs as a GitHub Action
-          with diff-aware filtering, inline PR comments, and SARIF reports for Code Scanning.
-        </p>
-        <div class="tags">
-          <span>Java</span>
-          <span>langchain4j</span>
-          <span>Claude API</span>
-          <span>GitHub Actions</span>
-        </div>
-        <a class="project-link" href="https://github.com/muvhulawamuthula/ai-java-reviewer.git" target="_blank">
-          View Repository →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <div class="project-top">
-          <span>Cloud / DevOps</span>
-          <h3>AWS Cloud Resume</h3>
-        </div>
-        <p>
-          This very site — a serverless resume served from a private S3 bucket
-          through CloudFront, with a visitor counter on API Gateway, Lambda and
-          DynamoDB. All infrastructure is defined in Java with the AWS CDK.
-          Migrated from Azure Static Web Apps.
-        </p>
-        <div class="tags">
-          <span>AWS</span>
-          <span>AWS CDK (Java)</span>
-          <span>CloudFront</span>
-          <span>Lambda</span>
-          <span>DynamoDB</span>
-        </div>
-        <a class="project-link" href="https://github.com/muvhulawamuthula/azure-cloud-resume.git" target="_blank">
-          View Repository →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <div class="project-top">
-          <span>Kubernetes Platform</span>
-          <h3>JavaApp Operator</h3>
-        </div>
-        <p>
-          A Kubernetes operator that automates the full lifecycle of stateful Java apps
-          from a single custom resource — provisioning StatefulSets, Services, and storage,
-          with rolling upgrades, readiness gating, and HPA-aware autoscaling.
-        </p>
-        <div class="tags">
-          <span>Java</span>
-          <span>Quarkus</span>
-          <span>Kubernetes</span>
-          <span>Operators</span>
-        </div>
-        <a class="project-link" href="https://github.com/muvhulawamuthula/javaapp-operator.git" target="_blank">
-          View Repository →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <div class="project-top">
-          <span>JVM Diagnostics</span>
-          <h3>Memory Leak Detector</h3>
-        </div>
-        <p>
-          A JVM-focused project for investigating memory behavior, leak patterns,
-          heap pressure, profiling, and Java application diagnostics.
-        </p>
-        <div class="tags">
-          <span>Java</span>
-          <span>JVM</span>
-          <span>Heap</span>
-          <span>Memory Analysis</span>
-        </div>
-        <a class="project-link" href="https://github.com/muvhulawamuthula/memory-leak-detector.git" target="_blank">
-          View Repository →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <div class="project-top">
-          <span>Parallel Processing</span>
-          <h3>Parallel File Word Counter</h3>
-        </div>
-        <p>
-          A Fork/Join based file processing project that splits large text workloads
-          into parallel tasks for faster counting and analysis.
-        </p>
-        <div class="tags">
-          <span>Java</span>
-          <span>Fork/Join</span>
-          <span>Parallelism</span>
-          <span>Files</span>
-        </div>
-        <a class="project-link" href="https://github.com/muvhulawamuthula/word-counter.git" target="_blank">
-          View Repository →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <div class="project-top">
-          <span>Reactive Systems</span>
-          <h3>Reactive Data Pipeline</h3>
-        </div>
-        <p>
-          A Java reactive pipeline exploring non-blocking processing, backpressure,
-          event-driven design, and scalable stream-style data handling.
-        </p>
-        <div class="tags">
-          <span>Java 21</span>
-          <span>Reactive</span>
-          <span>Backpressure</span>
-          <span>Pipeline</span>
-        </div>
-        <a class="project-link" href="https://github.com/muvhulawamuthula/reactive-pipeline.git" target="_blank">
-          View Repository →
-        </a>
-      </article>
-
-      <article class="project-card">
-        <div class="project-top">
-          <span>Social Impact API</span>
-          <h3>DailySpane Jakarta API</h3>
-        </div>
-        <p>
-          Backend API for DailySpane, a South African employment-focused platform
-          connecting people to daily odd jobs through a secure API-first design.
-        </p>
-        <div class="tags">
-          <span>Java</span>
-          <span>Jakarta EE</span>
-          <span>REST API</span>
-          <span>Security</span>
-        </div>
-        <a class="project-link" href="https://github.com/muvhulawamuthula/dailyspane-jakarta-api.git" target="_blank">
-          View Repository →
-        </a>
-      </article>
-
-    </div>
-  </section>
-
-  <section id="skills" class="section">
-    <div class="section-title">
-      <p>Technical Stack</p>
-      <h2>Tools I use to build production-minded systems.</h2>
-    </div>
-
-    <div class="skills-grid">
-      <span>Java 21</span>
-      <span>Java 17</span>
-      <span>Java 8</span>
-      <span>Spring Boot</span>
-      <span>Jakarta EE</span>
-      <span>REST APIs</span>
-      <span>Virtual Threads</span>
-      <span>Fork/Join</span>
-      <span>Reactive Programming</span>
-      <span>Docker</span>
-      <span>Azure</span>
-      <span>OCI</span>
-      <span>AWS</span>
-      <span>AWS CDK</span>
-      <span>Terraform</span>
-      <span>GitHub Actions</span>
-      <span>MySQL</span>
-      <span>Oracle Vector Search</span>
-      <span>OpenAI APIs</span>
-      <span>JVM</span>
-      <span>Memory Analysis</span>
-    </div>
-  </section>
-
-  <section id="contact" class="section contact-section">
-    <div>
-      <p class="eyebrow">Let’s Build</p>
-      <h2>Backend systems. Cloud projects. Performance engineering.</h2>
-    </div>
-
-    <div class="contact-links">
-      <a href="mailto:mutulamuvhulawa@gmail.com">mutulamuvhulawa@gmail.com</a>
-      <a href="https://github.com/muvhulawamuthula" target="_blank">GitHub</a>
-      <a href="#">South Africa</a>
+  <!-- ============================== CONTACT ============================== -->
+  <section class="section contact" id="contact">
+    <div class="contact-card reveal">
+      <p class="kicker"><span>06</span> Let's build</p>
+      <h2>Need a backend that holds up in production?</h2>
+      <p class="section-lede">Payments, high-throughput APIs, platform automation or JVM performance problems. I'm happy to talk through any of it.</p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:mutulamuvhulawa@gmail.com">mutulamuvhulawa@gmail.com</a>
+        <button class="btn btn-ghost" type="button" id="copy-email" data-email="mutulamuvhulawa@gmail.com">Copy email</button>
+        <a class="btn btn-ghost" href="https://github.com/muvhulawamuthula" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
     </div>
   </section>
 
 </main>
+
+<footer class="footer">
+  <span>© <span id="year">2026</span> Muvhulawa Muthula</span>
+  <span class="footer-meta">Served from <b data-tel="pop">CloudFront</b> · deployed by GitHub Actions + AWS CDK · press <kbd>⌘K</kbd></span>
+</footer>
+
+<!-- ============================== COMMAND PALETTE ============================== -->
+<dialog class="palette" id="palette" aria-label="Command palette">
+  <form method="dialog" class="palette-inner">
+    <div class="palette-search">
+      <span aria-hidden="true">❯</span>
+      <input id="palette-input" type="text" placeholder="Jump to a section or project…" autocomplete="off" spellcheck="false" aria-controls="palette-list" />
+      <kbd>esc</kbd>
+    </div>
+    <ul id="palette-list" class="palette-list" role="listbox"></ul>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="script.js"></script>
 </body>
