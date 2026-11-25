@@ -1,5 +1,3 @@
-// Unit tests for the visitorCounter Lambda.
-//
 // We mock @aws-sdk/client-dynamodb so DynamoDBClient#send is a jest.fn we
 // control, and UpdateItemCommand just records the input it was built with.
 
